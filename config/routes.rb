@@ -1,8 +1,10 @@
 RepairsApp::Application.routes.draw do
+  get "users/new"
   root 'static_pages#home'
   match '/help', to: 'static_pages#help', via: 'get'
   match '/about', to: 'static_pages#about', via: 'get'
   match '/new', to: 'static_pages#new', via: 'get'
+  match '/signup', to: 'users#new', via: 'get'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
