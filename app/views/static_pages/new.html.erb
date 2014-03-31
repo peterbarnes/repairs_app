@@ -1,0 +1,38 @@
+<% provide(:title, "New") %>
+<h1>New Repair</h1>
+<form class="form-horizontal">
+	<div class="control-group">
+		<label class="control-label" for="inputCustomer">Customer</label>
+		<div class="controls">
+			<input class="input-xxlarge"type="text" id="inputCustomer" placeholder="Customer"> 
+		</div>
+	</div>
+	<div class="control-group">
+		<label class="control-label" for="inputItem">Item</label>
+		<div class="controls">
+			<input class="input-xxlarge" type="text" id="inputItem" placeholder="Item">
+		</div>
+	</div>
+	<div class="control-group">
+		<label class="control-label" for="inputSerial">Serial Number</label>
+		<div class="controls">
+			<input class="input-xxlarge" type="text" id="inputSerial" placeholder="Serial number (leave blank if not present)">
+		</div>
+	</div>
+	<div class="control-group">
+		<label class="control-label" for="inputSymptoms">Symptoms</label>
+		<div class="controls">
+			<textarea class="input-xxlarge" rows="4" placeholder="Symptoms"></textarea>
+		</div>
+	</div>
+	<div class="control-group">
+		<label class="control-label" for="inputNotes">Notes</label>
+		<div class="controls">
+			<input class="input-xxlarge" type="text" id="inputNotes" placeholder="Notes">
+		</div>
+	</div>
+	<div class="form-actions">
+		<button type="submit" class="btn btn-primary">Create repair</button>
+		<%= link_to "Cancel", root_path, class: "btn" %>
+	</div>
+</form>
