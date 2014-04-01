@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  status: MyString
+  notes: MyText
+  symptoms: MyText
+  item: MyString
+  item_serial: MyString
+  complete: false
+
+two:
+  status: MyString
+  notes: MyText
+  symptoms: MyText
+  item: MyString
+  item_serial: MyString
+  complete: false
