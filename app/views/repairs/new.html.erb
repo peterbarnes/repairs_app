@@ -1,0 +1,26 @@
+<% provide(:title, "New") %>
+<h1>New repair</h1>
+
+<div class="row">
+	<div class="span6 offset3">
+		<%= form_for(@repair) do |f| %>
+
+			<%= f.label :customer %>
+			<%= f.text_field :customer %>
+
+			<%= f.label :item %>
+			<%= f.text_field :item %>
+
+			<%= f.label :item_serial %>
+			<%= f.text_field :item_serial %>
+
+			<%= f.label :symptoms %>
+			<%= f.text_area :symptoms %>
+
+			<%= f.label :notes %>
+			<%= f.text_area :symptoms %>
+
+			<%= f.submit "Create repair", class: "btn btn-large btn-primary" %>
+		<% end %>
+	</div>
+</div>

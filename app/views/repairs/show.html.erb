@@ -1,1 +1,12 @@
-<%= @repair.customer %>, <%= @repair.item %> <%= @repair.symptoms %>
+<style>
+li {
+	list-style: none;
+}
+</style>
+<h4>Repair for <%= @repair.customer %></h4>
+<ul>
+	<li><%= @repair.item %></li>
+	<li><%= @repair.item_serial %></li>
+	<li><%= @repair.symptoms %></li>
+	<li><%= @repair.notes %></li>
+</ul>
