@@ -5,14 +5,23 @@ li {
 </style>
 
 <div class="well well-large">
-	<h3><i class="fa fa-wrench"></i> Repair for <%= @repair.customer %></h3>
+<h3 class="back pull-right">
+	<%= link_to current_user do %>
+		<i class="fa fa-mail-reply"></i>
+	<% end %>
+	|
+	<%= link_to edit_repair_path do %>
+		<i class="fa fa-pencil-square-o"></i>
+	<% end %>
+</h3>
+	<h3><i class="fa fa-wrench"></i> Repair for <%= @repair.customer %> | <%= @repair.contact %></h3>
 	<ul>
 		<li>Submitted on <span class="label label-info"><%= time_tag(@repair.created_at, :format =>'%B %d, %Y') %></span></li>
 	</ul>
 </div>
 <div class="well well-large">
 	<div class="details">
-	<h3>Details</h3>
+	<h3><i class="fa fa-tasks"></i> Details</h3>
 	<ul class="well">
 		<li><b>Item:</b> <%= @repair.item %></li>
 		<li><b>Serial Number:</b> <%= @repair.item_serial %></li>
@@ -23,7 +32,7 @@ li {
 </div>
 </div>
 <div class="well well-large">
-	<h3>Status</h3>
+	<h3><i class="fa fa-exclamation-circle"></i> Status</h3>
 	<ul>
 		<li>Status <span class="label label-important">Incomplete</span></li>
 	</ul>

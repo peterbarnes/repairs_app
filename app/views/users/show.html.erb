@@ -2,21 +2,27 @@
 <div class="row">
   <aside class="span4 well well-large">
     <section>
-      <h1>
+      <div class="picture">
       	<%= gravatar_for @user %>
-        <i class="icon-off"></i> <%= @user.name %>
-      </h1>
+      </div>
+      <div class="info">
+      	<ul>
+      		<li><h3><i class="fa fa-user"></i> <%= @user.name %></h3></li>
+      		<li><i class="fa fa-envelope"></i> <%= @user.email %></li>
+      		<li><i class="fa fa-wrench"></i> Repairs: <%= @user.repairs.count %></li>
+      	</ul>
+      </div>
     </section>
   </aside>
   <aside class="span6 well well-large repairstable">
-  	<h3 class="pull-left">Repairs</h3>
-  	<a href="/repairs/new" class="btn btn-primary pull-right"><i class="icon-plus icon-white"></i> Create repair</a>
+  	<h3 class="pull-left"><i class="fa fa-wrench"></i> Repairs</h3>
+  	<a href="/repairs/new" class="btn btn-large btn-primary pull-right"><i class="fa fa-plus"></i> Create repair</a>
   		<table class="table">
 		<thead>
 			<tr>
 				<th>Customer</th>
 				<th>Item</th>
-				<th>Created At</th>
+				<th>Created on</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -30,7 +36,7 @@
 							<i class="fa fa-eye"></i>
 						<% end %>
 						|
-						<%= link_to '#' do %>
+						<%= link_to edit_repair_path(repair) do %>
 							<i class="fa fa-pencil-square-o"></i>
 						<% end %>
 

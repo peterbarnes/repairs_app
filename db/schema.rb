@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140402212147) do
+ActiveRecord::Schema.define(version: 20140402225403) do
 
   create_table "repairs", force: true do |t|
     t.string   "status"
@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 20140402212147) do
     t.datetime "updated_at"
     t.string   "customer"
     t.integer  "user_id"
+    t.string   "contact"
   end
 
   add_index "repairs", ["user_id"], name: "index_repairs_on_user_id"

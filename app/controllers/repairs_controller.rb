@@ -7,6 +7,20 @@ class RepairsController < ApplicationController
 		@repair = Repair.new(:user => current_user)
 	end
 
+	def edit
+		@repair = Repair.find(params[:id])
+	end
+
+	def update
+		@repair = Repair.find(params[:id])
+    if @repair.update_attributes(repair_params)
+      flash[:success] = "Repair updated"
+      redirect_to @repair
+    else
+      render 'edit'
+    end
+	end
+
 	def create
 		@repair = Repair.new(repair_params)
 		if @repair.save
@@ -19,6 +33,6 @@ class RepairsController < ApplicationController
 	private
 
 		def repair_params
-			params.require(:repair).permit(:user_id, :customer, :item, :symptoms, :item_serial, :notes)
+			params.require(:repair).permit(:user_id, :customer, :item, :symptoms, :item_serial, :notes, :contact)
 		end
 end
