@@ -5,7 +5,7 @@ li {
 </style>
 
 <div class="well well-large">
-	<h3>Repair for <%= @repair.customer %></h3>
+	<h3><i class="fa fa-wrench"></i> Repair for <%= @repair.customer %></h3>
 	<ul>
 		<li>Submitted on <span class="label label-info"><%= time_tag(@repair.created_at, :format =>'%B %d, %Y') %></span></li>
 	</ul>
