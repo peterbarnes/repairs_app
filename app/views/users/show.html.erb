@@ -1,14 +1,14 @@
 <% provide(:title, @user.name) %>
 <div class="row">
-  <aside class="span4">
+  <aside class="span4 well well-large">
     <section>
       <h1>
       	<%= gravatar_for @user %>
-        <%= @user.name %>
+        <i class="icon-off"></i> <%= @user.name %>
       </h1>
     </section>
   </aside>
 </div>
 <div>
-	<a href="/repairs/new" class="btn btn-large btn-primary">Create repair</a>
+	<a href="/repairs/new" class="btn btn-large btn-primary"><i class="icon-plus icon-white"></i> Create repair</a>
 </div>

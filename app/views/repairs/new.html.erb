@@ -11,14 +11,14 @@
 			<%= f.label :item %>
 			<%= f.text_field :item %>
 
-			<%= f.label :item_serial %>
+			<%= f.label "Serial number" %>
 			<%= f.text_field :item_serial %>
 
 			<%= f.label :symptoms %>
 			<%= f.text_area :symptoms %>
 
 			<%= f.label :notes %>
-			<%= f.text_area :symptoms %>
+			<%= f.text_area :notes %>
 
 			<%= f.submit "Create repair", class: "btn btn-large btn-primary" %>
 		<% end %>

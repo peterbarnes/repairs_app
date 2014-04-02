@@ -3,10 +3,27 @@ li {
 	list-style: none;
 }
 </style>
-<h4>Repair for <%= @repair.customer %></h4>
-<ul>
-	<li><%= @repair.item %></li>
-	<li><%= @repair.item_serial %></li>
-	<li><%= @repair.symptoms %></li>
-	<li><%= @repair.notes %></li>
-</ul>
+
+<div class="well well-large">
+	<h3>Repair for <%= @repair.customer %></h3>
+	<ul>
+		<li>Submitted on <span class="label label-info"><%= time_tag(@repair.created_at, :format =>'%B %d, %Y') %></span></li>
+	</ul>
+</div>
+<div class="well well-large">
+	<div class="details">
+	<h3>Details</h3>
+	<ul class="well">
+		<li><b>Item:</b> <%= @repair.item %></li>
+		<li><b>Serial Number:</b> <%= @repair.item_serial %></li>
+		<li><b>Symptoms:</b> <%= @repair.symptoms %></li>
+		<li><b>Notes:</b> <%= @repair.notes %></li>
+	</ul>
+</div>
+</div>
+<div class="well well-large">
+	<h3>Status</h3>
+	<ul>
+		<li>Status <span class="label label-important">Incomplete</span></li>
+	</ul>
+</div>
