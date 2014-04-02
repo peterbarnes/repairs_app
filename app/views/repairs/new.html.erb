@@ -20,6 +20,8 @@
 			<%= f.label :notes %>
 			<%= f.text_area :notes %>
 
+			<%= f.hidden_field :user_id %>
+
 			<%= f.submit "Create repair", class: "btn btn-large btn-primary" %>
 		<% end %>
 	</div>

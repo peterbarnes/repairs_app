@@ -8,7 +8,43 @@
       </h1>
     </section>
   </aside>
+  <aside class="span6 well well-large repairstable">
+  	<h3 class="pull-left">Repairs</h3>
+  	<a href="/repairs/new" class="btn btn-primary pull-right"><i class="icon-plus icon-white"></i> Create repair</a>
+  		<table class="table">
+		<thead>
+			<tr>
+				<th>Customer</th>
+				<th>Item</th>
+				<th>Created At</th>
+			</tr>
+		</thead>
+		<tbody>
+			<% @user.repairs.each do |repair| %>
+				<tr>
+					<td><%= repair.customer.truncate(20) %></td>
+					<td><%= repair.item.truncate(20) %></td>
+					<td><%= time_tag(repair.created_at, :format =>'%B %d, %Y') %></td>
+					<td>
+						<%= link_to repair do %>
+							<i class="fa fa-eye"></i>
+						<% end %>
+						|
+						<%= link_to '#' do %>
+							<i class="fa fa-pencil-square-o"></i>
+						<% end %>
+
+					</td>
+				</tr>
+			<% end %>
+		</tbody>
+	</table>
+  </aside>
 </div>
 <div>
-	<a href="/repairs/new" class="btn btn-large btn-primary"><i class="icon-plus icon-white"></i> Create repair</a>
+	
+</div>
+
+<div>
+
 </div>

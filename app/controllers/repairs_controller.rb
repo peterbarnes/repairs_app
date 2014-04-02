@@ -4,7 +4,7 @@ class RepairsController < ApplicationController
 	end
 
 	def new
-		@repair = Repair.new
+		@repair = Repair.new(:user => current_user)
 	end
 
 	def create
@@ -19,6 +19,6 @@ class RepairsController < ApplicationController
 	private
 
 		def repair_params
-			params.require(:repair).permit(:customer, :item, :symptoms, :item_serial, :notes)
+			params.require(:repair).permit(:user_id, :customer, :item, :symptoms, :item_serial, :notes)
 		end
 end

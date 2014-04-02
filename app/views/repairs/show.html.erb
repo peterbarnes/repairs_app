@@ -18,6 +18,7 @@ li {
 		<li><b>Serial Number:</b> <%= @repair.item_serial %></li>
 		<li><b>Symptoms:</b> <%= @repair.symptoms %></li>
 		<li><b>Notes:</b> <%= @repair.notes %></li>
+		<li><b>Employee:</b> <%= @repair.user.name if @repair.user %></li>
 	</ul>
 </div>
 </div>
