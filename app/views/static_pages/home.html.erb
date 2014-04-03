@@ -1,5 +1,11 @@
+<% if signed_in? %>
+<div>
+	<%=  %>
+</div>
+<% else %>
 <div class="center hero-unit well well-small">
 	<h1>Welcome to the Repairs App!</h1>
 	<h2>Repairs made easy</h2>
 	<%= link_to "Sign up now", signup_path , class: "btn btn-large btn-primary" %>
 </div>
+<% end %>
