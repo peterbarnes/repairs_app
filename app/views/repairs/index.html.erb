@@ -1,9 +1,8 @@
 <% provide(:title, "All repairs") %>
-<h1>All repairs <div class="well well-small number"><%= @repairs.all.count %></div></h1>
-
-
-
-<%= will_paginate %>
+<h1 class="well well-small top">All repairs <div class="number"><%= @repairs.all.count %></div></h1>
+<div class="pagination pagination-centered">
+	<%= will_paginate %>
+</div>
 <div class="table-striped">
 <table class="table indextable">
 	<thead>
@@ -40,5 +39,6 @@
 </tbody>
 </table>
 </div>
-
-<%= will_paginate %>
+<div class="pagination pagination-centered">
+	<%= will_paginate %>
+</div>
