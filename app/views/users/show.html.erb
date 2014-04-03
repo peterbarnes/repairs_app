@@ -7,9 +7,10 @@
       </div>
       <div class="info">
       	<ul>
-      		<li><h3><i class="fa fa-user"></i> <%= @user.name %></h3></li>
+      		<li class="name"><i class="fa fa-user"></i> <b><%= @user.name %></b></li>
+      		<li class="divider"></li>
       		<li><i class="fa fa-envelope"></i> <%= @user.email %></li>
-      		<li><i class="fa fa-wrench"></i> Repairs: <%= @user.repairs.count %></li>
+      		<li><i class="fa fa-wrench"></i>  <%= pluralize(@user.repairs.count, "repair") %></li>
       	</ul>
       </div>
     </section>
@@ -38,6 +39,10 @@
 						|
 						<%= link_to edit_repair_path(repair) do %>
 							<i class="fa fa-pencil-square-o"></i>
+						<% end %>
+						|
+						<%= link_to '#' do %>
+							<i class="fa fa-credit-card"></i>
 						<% end %>
 
 					</td>
