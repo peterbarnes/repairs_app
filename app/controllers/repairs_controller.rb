@@ -19,6 +19,9 @@ class RepairsController < ApplicationController
 		@repair = Repair.find(params[:id])
 	end
 
+	def checkout
+	end
+
 	def update
 		@repair = Repair.find(params[:id])
     if @repair.update_attributes(repair_params)
@@ -37,6 +40,7 @@ class RepairsController < ApplicationController
 			render 'new'
 		end
 	end
+
 
 	private
 
