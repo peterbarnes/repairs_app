@@ -21,9 +21,5 @@
 			<li><%= link_to "Sign in", signin_path %></li>
 			<% end %>
 		</ul>
-		<%= form_tag(repairs_path, :method => "get", id: "search-form") do %>
-			<%= text_field_tag "search[name]", params.has.key?("search") && params[:search].has_key?("name") ? params[:search][:name] : "" %>
-			<%= submit_tag "Search", :name => nil %>
-		<% end %>
 	</div>
 </div>
