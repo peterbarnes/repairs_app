@@ -1,5 +1,5 @@
 <% provide(:title, "All repairs") %>
-<div class="well well-small">
+<div class="well well-small header">
 <h1 class="top">All repairs</h1>
 <%= form_tag(repairs_path, :method => 'get', class:"navbar-form pull-right", id: "search-form") do %>
 	<div class="input-append">
@@ -7,9 +7,7 @@
 		<button class="btn" type="submit"><i class="fa fa-search"></i></button>
 	</div>
 <% end %>
-<div class="pagination">
 	<%= will_paginate %>
-</div>
 </div>
 <div class="table-striped">
 <table class="table indextable">
@@ -50,6 +48,4 @@
 </tbody>
 </table>
 </div>
-<div class="pagination">
 	<%= will_paginate %>
-</div>
