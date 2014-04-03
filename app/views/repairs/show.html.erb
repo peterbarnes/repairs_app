@@ -17,6 +17,10 @@ li {
 	<%= link_to edit_repair_path do %>
 		<i class="fa fa-pencil-square-o"></i>
 	<% end %>
+	|
+	<%= link_to '#' do %>
+		<i class="fa fa-credit-card"></i>
+	<% end %>
 </h3>
 	<h3><i class="fa fa-wrench"></i> Repair for <%= @repair.customer %> | <%= @repair.contact %></h3>
 	<ul>
@@ -38,6 +42,11 @@ li {
 <div class="well well-large">
 	<h3><i class="fa fa-exclamation-circle"></i> Status</h3>
 	<ul>
-		<li>Status <span class="label label-important">Incomplete</span></li>
+		<li>Status <% if @repair.complete = false %>
+			<span class="label label-important">Incomplete</span>
+			<% else %>
+			<span class="label label-success">Complete</span>
+			<% end %>
+		</li>
 	</ul>
 </div>
