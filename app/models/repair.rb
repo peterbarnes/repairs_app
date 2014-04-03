@@ -5,4 +5,8 @@ class Repair < ActiveRecord::Base
 	validates :symptoms, presence: true
 	validates :contact, presence: true
 	belongs_to :user
+
+	def self.search(query)
+		where("customer like ?", "%#{query}%")
+	end
 end

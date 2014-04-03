@@ -1,10 +1,14 @@
 class RepairsController < ApplicationController
-	def show
-		@repair = Repair.find(params[:id])
+	def index
+		if params[:search]
+			@repairs = Repair.search(params[:search]).order("created_at DESC").paginate(page: params[:page])
+		else
+			@repairs = Repair.order("created_at DESC").paginate(page: params[:page])
+		end
 	end
 
-	def index
-		@repairs = Repair.paginate(page: params[:page])
+	def show
+		@repair = Repair.find(params[:id])
 	end
 
 	def new
