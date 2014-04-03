@@ -3,6 +3,14 @@ class RepairsController < ApplicationController
 		@repair = Repair.find(params[:id])
 	end
 
+	def index
+		@repairs = Repair.paginate(page: params[:page])
+	end
+
+	def find
+		@repairs = Repair.search(params[:search])
+	end
+
 	def new
 		@repair = Repair.new(:user => current_user)
 	end

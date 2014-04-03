@@ -1,0 +1,42 @@
+<% provide(:title, "All repairs") %>
+<h1>All repairs (<%= @repairs.all.count %>)</h1>
+
+<%= will_paginate %>
+<div class="table-striped">
+<table class="table indextable">
+	<thead>
+			<tr>
+				<th>Customer</th>
+				<th>Item</th>
+				<th>S/N</th>
+				<th>Symptoms</th>
+				<th>User</th>
+				<th>Created on</th>
+			</tr>
+		</thead>
+		<tbody>
+<% @repairs.each do |repair| %>
+	<tr>
+		<td><%= repair.customer.truncate(20) %></td>
+		<td><%= repair.item.truncate(20) %></td>
+		<td><%= repair.item_serial %></td>
+		<td><%= repair.symptoms.truncate(35) %></td>
+		<td><%= repair.user.name.truncate(20) %></td>
+		<td><%= time_tag(repair.created_at, :format =>'%B %d, %Y') %></td>
+		<td>
+			<%= link_to repair do %>
+				<i class="fa fa-eye"></i>
+			<% end %>
+			|
+			<%= link_to edit_repair_path(repair) do %>
+				<i class="fa fa-pencil-square-o"></i>
+			<% end %>
+
+		</td>
+	</tr>
+<% end %>
+</tbody>
+</table>
+</div>
+
+<%= will_paginate %>

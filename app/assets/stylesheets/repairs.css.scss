@@ -1,6 +1,7 @@
 // Place all the styles related to the repairs controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
 .details ul {
 	width: 485px;
 	li {
@@ -16,6 +17,14 @@
 .info ul {
 	list-style: none;
 }
+
+.indextable {
+	width: 920px !important;
+	td {
+		padding: 10px;
+	}
+}
+
 
 
 
