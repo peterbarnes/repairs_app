@@ -4,13 +4,15 @@
 	<div class="span6 well pull-left cart">
 		<div>
 		<ul class="nav nav-tabs">
-			<li class="active">
-				<a href="#"><i class="fa fa-shopping-cart"> Cart</i></a>
-			</li>
-			<li>
-				<a href="#"><i class="fa fa-credit-card"> Payment</i></a>
-			</li>
-		</ul>	
+			<li class="active"><a href="#addLine" data-toggle="tab"><i class="fa fa-plus"> Add line</i></a></li>
+			<li><a href="#cart" data-toggle="tab"><i class="fa fa-shopping-cart"> Cart</i></a></li>
+			<li><a href="#payment" data-toggle="tab"><i class="fa fa-credit-card"> Payment</i></a></li>
+		</ul>
+		<div class="tab-content">
+			<div class="tab-pane active" id="addLine"><p>Add line</p></div>
+			<div class="tab-pane" id="cart"><p>Cart</p></div>
+			<div class="tab-pane" id="payment"><p>Payment</p></div>
+		</div>
 	</div>
 	</div>
 	<div class="span4 well pull-right price">
@@ -30,32 +32,32 @@
 	<ul class="total clearfix">
 		<li>
 			<span>Subtotal:</span>
-			<span class="pull-right">$1.75</span>
+			<span class="pull-right">$0.00</span>
 		</li>
 		<li>
 			<span>Store credit:</span>
 			<span class="pull-right">$0.00</span>
 		</li>
 		<li>
-			<span>Tax(0.07%</span>
-			<span class="pull-right">$0.12</span>
+			<span>Tax <small>(0.07%)</small></span>
+			<span class="pull-right">$0.00</span>
 		</li>
 		<li>
 			<span><b>Total:</b></span>
-			<span class="pull-right"><b>$1.87</b></span>
+			<span class="pull-right"><b>$0.00</b></span>
 		</li>
 	</ul>
 	<hr>
 	<ul class="payment clearfix">
 		<li>
 			<span>Cash:</span>
-			<span class="pull-right">$2.00</span>
+			<span class="pull-right">$0.00</span>
 		</li>
 	</ul>
 	<hr>
 	<div class="clearfix">
-		<p class="lead pull-left">Change due:</p>
-		<p class="lead pull-right">$0.13</p>
+		<p class="lead pull-left">Amount due:</p>
+		<p class="lead pull-right">$0.00</p>
 	</div>
 	</div>
 </div>
