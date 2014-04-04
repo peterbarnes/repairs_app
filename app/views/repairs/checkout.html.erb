@@ -1,19 +1,61 @@
 <% provide(:title, "Checkout") %>
 <h1><i class="fa fa-credit-card"></i> Complete repair</h1>
 <div class="row">
-	<div class="span7 well pull-left cart">
-		<div class="title">
-		<span><p class="text-left"><i class="fa fa-shopping-cart"></i> Cart 
-			<span>
-				<a href="#" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Add line</a>
-			</span></p>
-		</span>
-			
+	<div class="span6 well pull-left cart">
+		<div>
+		<ul class="nav nav-tabs">
+			<li class="active">
+				<a href="#"><i class="fa fa-shopping-cart"> Cart</i></a>
+			</li>
+			<li>
+				<a href="#"><i class="fa fa-credit-card"> Payment</i></a>
+			</li>
+		</ul>	
 	</div>
 	</div>
-	<div class="span3 well pull-right">
+	<div class="span4 well pull-right price">
 		<div class="title">
-		<p><i class="fa fa-money"></i> Price</p>
+		<p class="text-left"><i class="fa fa-money"></i> Price</p>
+	</div>
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Qty</th>
+				<th>Title</th>
+				<th>Price</th>
+				<th>Subtotal</th>
+			</tr>
+		</thead>
+	</table>
+	<ul class="total clearfix">
+		<li>
+			<span>Subtotal:</span>
+			<span class="pull-right">$1.75</span>
+		</li>
+		<li>
+			<span>Store credit:</span>
+			<span class="pull-right">$0.00</span>
+		</li>
+		<li>
+			<span>Tax(0.07%</span>
+			<span class="pull-right">$0.12</span>
+		</li>
+		<li>
+			<span><b>Total:</b></span>
+			<span class="pull-right"><b>$1.87</b></span>
+		</li>
+	</ul>
+	<hr>
+	<ul class="payment clearfix">
+		<li>
+			<span>Cash:</span>
+			<span class="pull-right">$2.00</span>
+		</li>
+	</ul>
+	<hr>
+	<div class="clearfix">
+		<p class="lead pull-left">Change due:</p>
+		<p class="lead pull-right">$0.13</p>
 	</div>
 	</div>
 </div>
