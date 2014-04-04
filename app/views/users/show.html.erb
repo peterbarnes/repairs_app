@@ -3,12 +3,11 @@
   <aside class="span4 well well-large">
     <section>
       <div class="picture">
+      	<h1><i class="fa fa-user"></i> <%= @user.name %></h1>
       	<%= gravatar_for @user %>
       </div>
       <div class="info">
       	<ul>
-      		<li class="name"><i class="fa fa-user"></i> <b><%= @user.name %></b></li>
-      		<li class="divider"></li>
       		<li><i class="fa fa-envelope"></i> <%= @user.email %></li>
       		<li><i class="fa fa-wrench"></i>  <%= pluralize(@user.repairs.count, "repair") %></li>
       	</ul>

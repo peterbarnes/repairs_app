@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  quantity: 
+  description: MyString
+  amount: 1
+  taxable: false
+
+two:
+  quantity: 
+  description: MyString
+  amount: 1
+  taxable: false

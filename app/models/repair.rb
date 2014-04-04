@@ -1,4 +1,5 @@
 class Repair < ActiveRecord::Base
+	has_many :lines
 	validates :customer, presence: true
 	validates :item, presence: true
 	default_scope -> { order('created_at DESC') }
