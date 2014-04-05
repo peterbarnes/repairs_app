@@ -66,14 +66,22 @@ ul.total {
 	}
 }
 
-#prependedInput {
-	width: 478px;
+.tab-content {
+	#addLine .prependedInput {
+		width: 478px;
+	}
+	#payment .prependedInput {
+		width: 358px;
+	}
 }
 
 p.lead {
 	margin-right: 5px;
 }
 
+hr {
+	color: #cccccc;
+}
 
 
 

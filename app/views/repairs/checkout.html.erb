@@ -20,10 +20,10 @@
 					<label>Amount</label>
 					<div class="input-prepend">
 						<span class="add-on">$</span>
-						<input class="input-large" id="prependedInput" type="number" placeholder="0">
+						<input class="prependedInput" type="number" placeholder="0">
 					</div>
 					<label class="checkbox">
-						<input type="checkbox"> Taxable
+						<input type="checkbox" checked> Taxable
 						<button type="submit" class="btn btn-primary pull-right"><i class="fa fa-plus"> Add</i></button>
 					</label>
 				</form>
@@ -57,13 +57,19 @@
 						<a href="#" class="btn">$50</a>
 						<a href="#" class="btn">$100</a>
 					</div>
+					<hr>
+					<div class="input-prepend">
+						<span class="add-on"><a href="#">Amount due:</a></span>
+						<input class="prependedInput" type="number" placeholder="0.00">
+					</div>
 				</div>
 				<div class="card well">
 					<div>
 						<p class="lead pull-left">Credit card</p>
 					</div>
-					<div class="btn-group">
-						<a href="#" class="btn">Amount due</a>
+					<div class="input-prepend">
+						<span class="add-on"><a href="#">Amount due:</a></span>
+						<input class="prependedInput" type="number" placeholder="0.00">
 					</div>
 				</div>
 			</div>
