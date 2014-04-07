@@ -1,4 +1,5 @@
 RepairsApp::Application.routes.draw do
+  get "lines/create"
   resources :users
   resources :repairs
   resources :sessions, only: [:new, :create, :destroy]
