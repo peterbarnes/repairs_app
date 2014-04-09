@@ -15,4 +15,8 @@ class StaticPagesController < ApplicationController
 
   def about
   end
+
+  def print
+    render 'print', layout: false
+  end
 end
