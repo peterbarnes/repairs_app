@@ -10,21 +10,24 @@
 		</ul>
 		<div class="tab-content">
 			<div class="tab-pane active" id="addLine">
-				<form>
-					<label>Title</label>
-					<input type="text" placeholder="Title" autofocus=true>
-					<label>Quantity</label>
-					<input type="number" placeholder="0">
-					<label>Amount</label>
-					<div class="input-prepend">
-						<span class="add-on">$</span>
-						<input class="prependedInput" type="number" placeholder="0">
-					</div>
-					<label class="checkbox">
-						<input type="checkbox" checked> Taxable
-						<button type="submit" class="btn btn-primary pull-right"><i class="fa fa-plus"> Add</i></button>
-					</label>
-				</form>
+				<%= form_for @repair, :url => update_checkout_repair_path(@repair) do |f| %>
+					<%= f.fields_for :lines do |l| %>
+						<%= l.label :title %>
+						<%= l.text_field :title, autofocus: true %>
+
+						<%= l.label :quantity %>
+						<%= l.number_field :quantity %>
+
+						<%= l.label :amount %>
+						<%= l.number_field :amount %>
+
+						<%= l.label :taxable %>
+						<%= l.check_box :taxable %>
+
+						<%= l.check_box :_destroy %>
+					<% end %>
+					<%= f.submit "Submit" %>
+				<% end %>
 			</div>
 			<div class="tab-pane" id="cart">
 				<table class="table">
@@ -36,6 +39,16 @@
 							<th>Subtotal</th>
 						</tr>
 					</thead>
+					<tbody>
+						<% @repair.lines.each do |line| %>
+							<tr>
+								<td><%= line.quantity %></td>
+								<td><%= line.title %></td>
+								<td><%= convert(line.amount) %></td>
+								<td><%= convert(line.subtotal) %></td>
+							</tr>
+						<% end %>
+					</tbody>
 				</table>
 			</div>
 			<div class="tab-pane" id="payment">
@@ -87,19 +100,31 @@
 				<th>Subtotal</th>
 			</tr>
 		</thead>
+		<tbody>
+			<% @repair.lines.each do |line| %>
+				<tr>
+					<td><%= line.quantity %></td>
+					<td><%= line.title %></td>
+					<td><%= convert(line.amount) %></td>
+					<td><%= convert(line.subtotal) %></td>
+				</tr>
+			<% end %>
+		</tbody>
 	</table>
 	<ul class="total clearfix">
 		<li>
 			<span>Subtotal:</span>
-			<span class="pull-right">$0.00</span>
+			<span class="pull-right">
+				<%= convert(@repair.subtotal) %>
+			</span>
 		</li>
 		<li>
-			<span>Tax <small>(0.07%)</small></span>
-			<span class="pull-right">$0.00</span>
+			<span>Tax <small>(<%= round(@repair.taxrate) %>%)</small></span>
+			<span class="pull-right"><%= convert(round(@repair.tax)) %></span>
 		</li>
 		<li>
 			<span><b>Total:</b></span>
-			<span class="pull-right"><b>$0.00</b></span>
+			<span class="pull-right"><b><%= convert(@repair.total) %></b></span>
 		</li>
 	</ul>
 	<hr>

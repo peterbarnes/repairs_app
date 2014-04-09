@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140407174040) do
+ActiveRecord::Schema.define(version: 20140409204826) do
 
   create_table "lines", force: true do |t|
     t.integer  "quantity"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20140407174040) do
     t.datetime "updated_at"
     t.integer  "user_id"
     t.string   "title"
+    t.integer  "repair_id"
   end
 
   create_table "repairs", force: true do |t|
@@ -35,6 +36,7 @@ ActiveRecord::Schema.define(version: 20140407174040) do
     t.integer  "user_id"
     t.string   "contact"
     t.string   "status"
+    t.decimal  "taxrate"
   end
 
   add_index "repairs", ["user_id"], name: "index_repairs_on_user_id"

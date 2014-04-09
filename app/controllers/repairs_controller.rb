@@ -20,6 +20,9 @@ class RepairsController < ApplicationController
 	end
 
 	def checkout
+		@repair = Repair.find(params[:id])
+		@line = Line.new(:taxable => true)
+		@repair.lines << @line
 	end
 
 	def update
@@ -29,6 +32,15 @@ class RepairsController < ApplicationController
       redirect_to @repair
     else
       render 'edit'
+    end
+	end
+
+	def update_checkout
+		@repair = Repair.find(params[:id])
+    if @repair.update_attributes(repair_params)
+      redirect_to checkout_repair_path(@repair)
+    else
+      render 'checkout'
     end
 	end
 
@@ -45,6 +57,6 @@ class RepairsController < ApplicationController
 	private
 
 		def repair_params
-			params.require(:repair).permit(:status, :user_id, :customer, :item, :symptoms, :item_serial, :notes, :contact)
+			params.require(:repair).permit!
 		end
 end

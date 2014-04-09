@@ -1,17 +1,20 @@
 RepairsApp::Application.routes.draw do
   get "lines/create"
   resources :users
-  resources :repairs
+  resources :repairs do
+    member do
+      get 'checkout'
+      patch 'update_checkout'
+    end
+  end
   resources :sessions, only: [:new, :create, :destroy]
   root 'static_pages#home'
-  match '/help', to: 'static_pages#help', via: 'get'
-  match '/about', to: 'static_pages#about', via: 'get'
-  match '/new', to: 'static_pages#new', via: 'get'
-  match '/signup', to: 'users#new', via: 'get'
-  match '/signin', to: 'sessions#new', via: 'get'
-  match '/signout', to: 'sessions#destroy', via: 'delete'
-  match '/new', to: 'repairs#new', via: 'get'
-  match '/checkout', to: 'repairs#checkout', via: 'get'
+  match '/help',    to: 'static_pages#help',  via: 'get'
+  match '/about',   to: 'static_pages#about', via: 'get'
+  match '/new',     to: 'static_pages#new',   via: 'get'
+  match '/signup',  to: 'users#new',          via: 'get'
+  match '/signin',  to: 'sessions#new',       via: 'get'
+  match '/signout', to: 'sessions#destroy',   via: 'delete'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
